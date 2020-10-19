@@ -11,7 +11,22 @@
 
 	<div class="box-login">
 		<?php
-			$pdo = MySql::conectar();
+			if(isset($_POST['acao'])){
+				$user = $_POST['user'];
+				$password = $_POST['password'];
+				$sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios` WHERE user = ? AND password = ?");
+				$sql->execute(array($user,$password));
+				if($sql->rowCount() == 1){
+					//Logamos com sucesso.
+					$_SESSION['login'] = true;
+					$_SESSION['user'] = $user;
+					$_SESSION['password'] = $password;
+					header('Location: '.INCLUDE_PATH_PAINEL);
+				}else{
+					//Falhou.
+					echo '<div class="erro-box">Usuário ou senha incorretos!</div>';
+				}
+			}
 		?>
 		<h2>Efetue o login:</h2>
 		<form>
