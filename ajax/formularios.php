@@ -9,13 +9,13 @@
 		$corpo.="<hr>";
 	}
 	$info = array('assunto'=>$assunto,'corpo'=>$corpo);
-	$mail = new Email('vps.dankicode.com','testes@dankicode.com','gui123456','Guilherme');
-	$mail->addAdress('contato@dankicode.com','Guilherme');
+	$mail = new Email('smtp.gmail.com','kausinhobrunow@gmail.com','kalzinho2005','Kausinho');
+	$mail->addAdress('gandalfcurso@gmail.com','Klaussio');
 	$mail->formatarEmail($info);
 	if($mail->enviarEmail()){
 		$data['sucesso'] = true;
 	}else{
-		$data['erro'] = true;
+		$data['sucesso'] = false;
 	}
 	
 	//$data['retorno'] = 'sucesso';
