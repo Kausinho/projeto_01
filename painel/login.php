@@ -22,6 +22,7 @@
 					$_SESSION['user'] = $user;
 					$_SESSION['password'] = $password;
 					header('Location: '.INCLUDE_PATH_PAINEL);
+					die();
 				}else{
 					//Falhou.
 					echo '<div class="erro-box">Usuário ou senha incorretos!</div>';
@@ -29,7 +30,7 @@
 			}
 		?>
 		<h2>Efetue o login:</h2>
-		<form>
+		<form method="post">
 			<input type="text" name="user" placeholder="Login..." required>
 			<input type="password" name="password" placeholder="Senha..." required>
 			<input type="submit" name="acao" value="Logar!">
