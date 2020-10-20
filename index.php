@@ -83,8 +83,7 @@
 	</footer>
 	<script src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/constants.js"></script>
-	<script src='https://maps.googleapis.com/maps/api/
-	js?key=AIzaSyDiCG7S-N2AD2E2VmD4-DmukOuSyD7xQWU'></script>
+	<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4'></script>
 	<script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
 	
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
