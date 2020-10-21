@@ -25,6 +25,7 @@
 					$_SESSION['password'] = $password;
 					$_SESSION['cargo'] = $info['cargo'];
 					$_SESSION['nome'] = $info['nome'];
+					$_SESSION['img'] = $info['img'];
 					header('Location: '.INCLUDE_PATH_PAINEL);
 					die();
 				}else{
