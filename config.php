@@ -20,4 +20,9 @@
 	define('USER','root');
 	define('PASSWORD','');
 	define('DATABASE','projeto_01');
+
+	//Funções
+	function pegaCargo($cargo){
+
+	}
 ?>
