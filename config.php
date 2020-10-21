@@ -23,6 +23,11 @@
 
 	//Funções
 	function pegaCargo($cargo){
+		$arr = [
+			'0' => 'Nomral',
+			'1' => 'Sub Administrador',
+			'2' => 'Administrador'];
 
+			return $arr[$cargo];
 	}
 ?>
