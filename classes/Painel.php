@@ -9,7 +9,7 @@
 
 		public static function loggout(){
 			session_destroy();
-			header('Location: '.INCLUDE_PATH_PAINEL.'painel/');
+			header('Location: '.INCLUDE_PATH.'painel/');
 		}
 
 	}
