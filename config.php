@@ -30,4 +30,5 @@
 
 			return $arr[$cargo];
 	}
+	$nomeEmpresa = 'Danki Code';
 ?>
