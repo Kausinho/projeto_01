@@ -10,6 +10,10 @@ html,body{
 	background: rgb(225,225,225);
 }
 
+.body{
+	overflow-x: hidden;
+}
+
 /*Página login*/
 .box-login{
 	box-shadow: 10px 10px 5px rgb(200,200,200);
@@ -73,7 +77,8 @@ html,body{
 .center{padding: 0 2%;margin: 0 auto;}
 
 header{
-	float: left;
+	position: relative;
+	left: 300px;
 	padding: 10px 0;
 	background: #78909c;
 	width: calc(100% - 300px);
@@ -102,10 +107,15 @@ header{
 	color: white;
 }
 
+.menu-wraper{width:300px;}
 div.menu{
+	overflow-x:hidden;
 	overflow-y: auto;
 	height: 100%;
-	padding: 10px;
+	padding: 10px 0;
+	position: fixed;
+	left: 0;
+	top: 0;
 	background: #455a64;
 	float: left;
 	width: 300px;
@@ -134,6 +144,24 @@ div.avatar-usuario i{
 	color: #2F3D42;
 }
 
+.imagem-usuario{
+	display: inline-block;
+	width: 130px;
+	height: 130px;
+	position: relative;
+	border-radius: 50%;
+	border: 3px solid #2F3D42;
+}
+
+.imagem-usuario img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
 div.nome-usuario{
 	text-align: center;
 	margin-top: 10px;
@@ -143,4 +171,120 @@ div.nome-usuario p{
 	color: white;
 	font-size: 15px;
 	font-weight: normal;
+}
+
+/*Conteúdo principal do painel*/
+
+.w100{
+	width: 100%;
+}
+
+.w50{
+	width: 49%;
+}
+
+.left{
+	float: left;
+}
+
+.rigth{
+	float: right;
+}
+
+.content{
+	width: calc(100% - 300px);
+	position: relative;
+	left: 300px;
+	padding: 10px;
+}
+
+.box-content{
+	background: white;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.items-menu{
+	margin-top: 30px;
+}
+
+.items-menu h2{
+	text-align: left;
+	font-weight: normal;
+	font-size: 17px;
+	background: #2F3D42;
+	color: white;
+	padding: 8px;
+}
+
+.items-menu a{
+	display: block;
+	padding: 8px;
+	font-weight: 300;
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+	border-bottom: 2px solid #2F3D42;
+}
+
+/*Box Métricas*/
+
+.box-metricas{
+	margin-top:16px;
+	padding:0 15px;
+}
+
+.box-metrica-single{
+	float: left;
+	position: relative;
+	width: 33.3%;
+	background: #F4B03E;
+	border: 5px solid white;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(2){
+	background: #E05C4E;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(3){
+	background: #0091ea;
+}
+
+.box-metrica-wraper{
+	padding: 10px 20px;
+	text-align: left;
+	color: white;
+}
+
+.box-metrica-wraper h2{
+	font-size: 28px;
+}
+
+.box-metrica-wraper p{
+	padding: 10px 0;
+	font-size: 26px;
+}
+
+
+
+@media screen and (max-width: 768px){
+	.menu{
+		display: none;
+	}
+
+	.content{
+		width: 100%;
+		left: 0;
+	}
+
+	header{
+		left: 0;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.menu-wraper{
+		width: 200px;
+	}
 }
