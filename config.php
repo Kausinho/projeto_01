@@ -21,6 +21,9 @@
 	define('PASSWORD','');
 	define('DATABASE','projeto_01');
 
+	//Constantes para o painel de controle
+	define('NOME_EMPRESA','Danki Code');
+
 	//Funções
 	function pegaCargo($cargo){
 		$arr = [
@@ -30,5 +33,4 @@
 
 			return $arr[$cargo];
 	}
-	$nomeEmpresa = 'Danki Code';
 ?>
