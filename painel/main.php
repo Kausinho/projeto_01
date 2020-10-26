@@ -67,47 +67,11 @@
 
 <div class="content">	
 
-	<div class="box-content left w100">
-		<h2><i class="fa fa-home"></i> Painel de Controle - <?php echo $nomeEmpresa ?></h2>
+	<?php Painel::carregarPagina(); ?>
 
-		<div class="box-metricas">
-			<div class="box-metrica-single">
-				<div class="box-metrica-wraper">
-					<h2>Usuários Online</h2>
-					<p>10</p>
-				</div><!--box-metrica-wraper-->
-			</div><!--box-metrica-single-->
-			<div class="box-metrica-single">
-				<div class="box-metrica-wraper">
-					<h2>Total de Vistas</h2>
-					<p>100</p>
-				</div><!--box-metrica-wraper-->
-			</div><!--box-metrica-single-->
-			<div class="box-metrica-single">
-				<div class="box-metrica-wraper">
-					<h2>Vistas de Hoje</h2>
-					<p>3</p>
-				</div><!--box-metrica-wraper-->
-			</div><!--box-metrica-single-->
-		</div><!--box-metricas-->
+</div><!--box-content-->
 
-	</div><!--box-content-->
-
-	<!--
-	<div class="box-content left w100">
-
-	</div>
-
-	<div class="box-content left w50">
-
-	</div>
-
-	<div class="box-content rigth w50">
-
-	</div>
-	-->
-
-	<div class="clear"></div>	
+		
 
 </div><!--content-->
 <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
