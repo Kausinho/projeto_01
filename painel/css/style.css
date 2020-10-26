@@ -76,14 +76,6 @@ html,body{
 
 .center{padding: 0 2%;margin: 0 auto;}
 
-header{
-	position: relative;
-	left: 300px;
-	padding: 10px 0;
-	background: #78909c;
-	width: calc(100% - 300px);
-}
-
 .loggout{
 	float: right;
 
@@ -108,7 +100,7 @@ header{
 }
 
 .menu-wraper{width:300px;}
-div.menu{
+.menu{
 	overflow-x:hidden;
 	overflow-y: auto;
 	height: 100%;
@@ -121,11 +113,49 @@ div.menu{
 	width: 300px;
 }
 
-div.box-usuario{
+header{
+	position: relative;
+	left: 250px;
+	padding: 10px 0;
+	background: #78909c; 
+	width: calc(100% - 250px);
+}
+
+.content{
+	width: calc(100% - 300px);
+	position: relative;
+	left: 300px;
+	padding: 10px;
+}
+
+.items-menu{
+	margin-top: 30px;
+}
+
+.items-menu h2{
+	text-align: left;
+	font-weight: normal;
+	font-size: 17px;
+	background: #2F3D42;
+	color: white;
+	padding: 8px;
+}
+
+.items-menu a{
+	display: block;
+	padding: 8px;
+	font-weight: 300;
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+	border-bottom: 2px solid #2F3D42;
+}
+
+.box-usuario{
 	text-align: center;
 }
 
-div.avatar-usuario{
+.avatar-usuario{
 	text-align: left;
 	display: inline-block;
 	width: 130px;
@@ -134,7 +164,7 @@ div.avatar-usuario{
 	border: 3px solid #2F3D42;
 }
 
-div.avatar-usuario i{
+.avatar-usuario i{
 	position: relative;
 	left: 50%;
 	top: 50%;
@@ -162,12 +192,12 @@ div.avatar-usuario i{
 	border-radius: 50%;
 }
 
-div.nome-usuario{
+.nome-usuario{
 	text-align: center;
 	margin-top: 10px;
 }
 
-div.nome-usuario p{
+.nome-usuario p{
 	color: white;
 	font-size: 15px;
 	font-weight: normal;
@@ -191,40 +221,15 @@ div.nome-usuario p{
 	float: right;
 }
 
-.content{
-	width: calc(100% - 300px);
-	position: relative;
-	left: 300px;
-	padding: 10px;
-}
-
 .box-content{
 	background: white;
-	padding: 10px;
-	margin-bottom: 10px;
+	padding: 30px;
+	margin-bottom: 25px;
 }
 
-.items-menu{
-	margin-top: 30px;
-}
-
-.items-menu h2{
-	text-align: left;
-	font-weight: normal;
-	font-size: 17px;
-	background: #2F3D42;
-	color: white;
-	padding: 8px;
-}
-
-.items-menu a{
-	display: block;
-	padding: 8px;
+.box-content h2{
 	font-weight: 300;
-	font-size: 16px;
-	text-decoration: none;
-	color: white;
-	border-bottom: 2px solid #2F3D42;
+	font-size: 23px;
 }
 
 /*Box Métricas*/
@@ -265,13 +270,20 @@ div.nome-usuario p{
 	font-size: 26px;
 }
 
+@media screen and (max-width: 1200px){
+	.box-metrica-single{
+		height: 100px;
+	}
+}
 
+@media screen and (max-width: 1024px){
+	.box-metrica-single{
+		width: 100%;
+		height: auto;
+	}
+}
 
 @media screen and (max-width: 768px){
-	.menu{
-		display: none;
-	}
-
 	.content{
 		width: 100%;
 		left: 0;
@@ -280,6 +292,16 @@ div.nome-usuario p{
 	header{
 		left: 0;
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px){
+	.w50{
+		width: 100%;
+	}
+	.box-single-metrica{
+		width: 100%;
+		padding-top: 40%;
 	}
 }
 
