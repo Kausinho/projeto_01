@@ -68,7 +68,6 @@
 <div class="content">	
 
 	<div class="box-content left w100">
-		<!--TROCAR POR CÓDIGO PHP-->
 		<h2><i class="fa fa-home"></i> Painel de Controle - <?php echo $nomeEmpresa ?></h2>
 
 		<div class="box-metricas">
