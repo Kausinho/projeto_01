@@ -36,7 +36,7 @@
 			</div><!--box-usuario-->
 		<div class="items-menu">
 			<h2>Cadastro</h2>
-			<a href="">Cadastrar Depoimentos</a>
+			<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimentos</a>
 			<a href="">Cadastrar Serviços</a>
 			<a href="">Cadastrar Slides</a>
 			<h2>Gestão</h2>
@@ -57,8 +57,11 @@
 		<div class="menu-btn">
 			<i class="fa fa-bars"></i>
 		</div><!--menu-btn-->
+		<div class="btn-home">
+			<a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fa fa-home"></i> <span>Sair</span></a>
+		</div><!--btn-home-->
 		<div class="loggout">
-			<a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fa fa-window-close"></i> <span>Sair</span> </a>
+			<a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fa fa-window-close"></i> <span>Sair</span></a>
 		</div><!--loggout-->
 
 		<div class="clear"></div>
