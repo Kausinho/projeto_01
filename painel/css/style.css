@@ -281,13 +281,35 @@ div.box-usuario{
 	font-size: 26px;
 }
 
+/*Tabela Responsiva*/
+
+.table-responsive{
+	max-width: 1280px;
+	margin:20px auto;
+}
+
+.table-responsive .row:nth-of-type(1){
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+
+.table-responsive .row{
+	color: #777;
+	padding: 8px 0;
+}
+
+.col{
+	float: left;
+	width: 50%;
+}
+
 @media screen and (max-width: 1200px){
 	.box-metrica-single{
 		height: 100px;
 	}
 }
 
-@@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px){
 	.box-metrica-single{
 		width: 100%;
 	}
