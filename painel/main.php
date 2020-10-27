@@ -57,10 +57,9 @@
 		<div class="menu-btn">
 			<i class="fa fa-bars"></i>
 		</div><!--menu-btn-->
-		<div class="btn-home">
-			<a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fa fa-home"></i> <span>Sair</span></a>
-		</div><!--btn-home-->
+		
 		<div class="loggout">
+			<a href="<?php echo INCLUDE_PATH_PAINEL ?>"><i class="fa fa-home"></i> <span>Página inicial</span></a>
 			<a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"><i class="fa fa-window-close"></i> <span>Sair</span></a>
 		</div><!--loggout-->
 
