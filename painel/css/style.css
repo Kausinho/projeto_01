@@ -122,10 +122,10 @@ header{
 }
 
 .content{
-	width: calc(100% - 300px);
+	width: calc(100% - 250px);
 	position: relative;
-	left: 300px;
-	padding: 10px;
+	left: 250px;
+	padding: 2%;
 }
 
 .items-menu{
