@@ -1,4 +1,4 @@
-<div class="box-content left w100">
+<div class="box-content">
 	<h2><i class="fa fa-home"></i> Painel de Controle - <?php echo NOME_EMPRESA ?></h2>
 
 	<div class="box-metricas">
@@ -21,3 +21,32 @@
 			</div><!--box-metrica-wraper-->
 		</div><!--box-metrica-single-->
 </div><!--box-metricas-->
+
+<div class="box-content w100">
+	<h2><i class="fa fa-rocket" aria-hidden="true"></i> Usuários Online</h2>
+		<div class="table-responsive">
+			<div class="row">
+				<div class="col">
+					<span>IP</span>
+				</div><!--col-->
+				<div class="col">
+					<span>Última Ação</span>
+				</div><!--col-->
+				<div class="clear"></div>
+			</div><!--row-->
+
+			<?php
+				for($i = 0; $i < 1; $i++){
+			?>
+			<div class="row">
+				<div class="col">
+					<span>199.199.199.199</span>
+				</div><!--col-->
+				<div class="col">
+					<span>27/10/2020 10:00:00</span>
+				</div><!--col-->
+				<div class="clear"></div>
+			</div><!--row-->
+			<?php } ?>
+		</div><!--table-responsive-->
+</div><!--box-content-->
