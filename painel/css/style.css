@@ -74,21 +74,25 @@ html,body{
 
 .clear{clear:both;}
 
-.center{padding: 0 2%;margin: 0 auto;}
+.center{padding:0 2%;margin:0 auto;}
+
+
 
 .loggout{
 	float: right;
-
 }
 
 .loggout a{
+	padding: 0 20px;
+	position: relative;
+	top: 4px;
 	text-decoration: none;
 	color: white;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 .loggout a > span{
-	font-size: 17px;
+	font-size: 16px;
 	text-decoration: none;
 }
 
@@ -99,19 +103,22 @@ html,body{
 	color: white;
 }
 
-.menu-wraper{width:300px;}
-.menu{
+
+.menu-wraper{width:250px;}
+
+div.menu{
 	overflow-x:hidden;
 	overflow-y: auto;
 	height: 100%;
-	padding: 10px 0;
+	padding:10px 0;
 	position: fixed;
 	left: 0;
 	top: 0;
 	background: #455a64;
 	float: left;
-	width: 300px;
+	width: 250px;
 }
+
 
 header{
 	position: relative;
@@ -128,6 +135,8 @@ header{
 	padding: 2%;
 }
 
+
+
 .items-menu{
 	margin-top: 30px;
 }
@@ -138,7 +147,7 @@ header{
 	font-size: 17px;
 	background: #2F3D42;
 	color: white;
-	padding: 8px;
+	padding:8px;
 }
 
 .items-menu a{
@@ -151,7 +160,9 @@ header{
 	border-bottom: 2px solid #2F3D42;
 }
 
-.box-usuario{
+
+div.box-usuario{
+	padding: 8px;
 	text-align: center;
 }
 
@@ -168,8 +179,8 @@ header{
 	position: relative;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%,-50%);
-	-ms-tranform: translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
 	font-size: 50px;
 	color: #2F3D42;
 }
@@ -217,7 +228,7 @@ header{
 	float: left;
 }
 
-.rigth{
+.right{
 	float: right;
 }
 
@@ -232,7 +243,7 @@ header{
 	font-size: 23px;
 }
 
-/*Box Métricas*/
+/*Box Metricas*/
 
 .box-metricas{
 	margin-top:16px;
@@ -276,14 +287,14 @@ header{
 	}
 }
 
-@media screen and (max-width: 1024px){
+@@media screen and (max-width: 1024px){
 	.box-metrica-single{
 		width: 100%;
-		height: auto;
 	}
 }
 
 @media screen and (max-width: 768px){
+	
 	.content{
 		width: 100%;
 		left: 0;
@@ -306,6 +317,16 @@ header{
 }
 
 @media screen and (max-width: 400px){
+
+	.box-metrica-wraper h2{
+	font-size: 24px;
+	}
+
+	.box-metrica-wraper p{
+	padding: 10px 0;
+	font-size: 22px;
+	}
+
 	.menu-wraper{
 		width: 200px;
 	}
