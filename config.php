@@ -28,7 +28,7 @@
 	//Funções
 	function pegaCargo($cargo){
 		$arr = [
-			'0' => 'Nomral',
+			'0' => 'Normal',
 			'1' => 'Sub Administrador',
 			'2' => 'Administrador'];
 
