@@ -38,6 +38,14 @@
 			$sql = Mysql::conectar()->exec("DELETE FROM `tb_admin.online` WHERE ultima_acao < '$date' - INTERVAL 1 MINUTE");
 		}
 
+		public static function Alert($tipo,$mensagem){
+			if($tipo == 'sucesso'){
+				echo '<div class="box-alert sucesso"><i class="fa fa-check"></i> '.$mensagem.'</div>';
+			}else if($tipo == 'erro'){
+				echo '<div class="box-alert erro"><i class="fa fa-times"></i> '.$mensagem.'</div>';
+			}
+		}
+
 	}
 
 ?>
