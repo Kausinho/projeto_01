@@ -26,6 +26,18 @@
 			}
 		}
 
+		public static function listarUsuariosOnline(){
+			self::limparUsuariosOnline();
+			$sql = Mysql::conectar()->prepare("SELECT * FROM `tb_admin.online`");
+			$sql->execute();
+			return $sql->fetchAll();
+		}
+
+		public static function limparUsuariosOnline(){
+			$date = date('Y-m-d H:i:s');
+			$sql = Mysql::conectar()->exec("DELETE FROM `tb_admin.online` WHERE ultima_acao < '$date' - INTERVAL 1 MINUTE");
+		}
+
 	}
 
 ?>
