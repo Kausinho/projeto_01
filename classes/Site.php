@@ -3,7 +3,7 @@
 	class Site{
 
 		public static function updateUsuarioOnline(){
-			if(isset($_SESSIO['online'])){
+			if(isset($_SESSION['online'])){
 				$token = $_SESSION['online'];
 				$horarioAtual = date('Y,m,d H:i:s');
 				$sql = Mysql::conectar()->prepare("UPDATE `tb_admin.online` SET ultima_acao = ? WHERE token = ?");
