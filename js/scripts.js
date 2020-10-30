@@ -24,7 +24,7 @@ $(function(){
 			listaMenu.css('display','none');
 		}
 		*/
-
+		
 		if(listaMenu.is(':hidden') == true){
 			//fa fa-times
 			//fa fa-bars
@@ -40,6 +40,7 @@ $(function(){
 			icone.addClass('fa-bars');
 			listaMenu.slideToggle();
 		}
+		
 
 	});
 
