@@ -13,14 +13,14 @@ $(function(){
 		*/
 
 		//Abrir ou fechar sem efeitos
-		/*
 		
+		/*
 		if(listaMenu.is(':hidden') == true){
-			//listaMenu.show();
+			listaMenu.show();
 			listaMenu.css('display','block');
 		}
 		else{
-			//listaMenu.hide();
+			listaMenu.hide();
 			listaMenu.css('display','none');
 		}
 		*/
