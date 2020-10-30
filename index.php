@@ -47,7 +47,7 @@
 			</nav>
 			<nav class="mobile rigth">
 				<div class="botao-menu-mobile">
-					<i class="fa fa-bars"></i>
+					<i class="fa fa-bars" aria-hidden="true"></i>
 				</div>
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
