@@ -47,7 +47,7 @@
 		}
 
 		public static function imagemValida($imagem){
-			if($imagem['type'] == 'image.jpeg' ||
+			if($imagem['type'] == 'image/jpeg' ||
 				$imagem['type'] == 'imagem/jpg' ||
 				$imagem['type'] == 'imagem/png'){
 
@@ -64,7 +64,7 @@
 
 		public static function uploadFile($file){
 			if(move_uploaded_file(['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$file['name'])){
-				return $file['name '];
+				return $file['name'];
 			}else{
 				return false;
 			}
