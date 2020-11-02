@@ -71,6 +71,10 @@
 			
 		}
 
+		public static function deleteFile($file){
+			@unlink(BASE_DIR_PAINEL.'/uploads/'.$file);
+		}
+
 	}
 
 ?>
