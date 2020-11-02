@@ -63,7 +63,7 @@
 		}
 
 		public static function uploadFile($file){
-			if(move_uploaded_file(['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$file['name'])){
+			if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$file['name'])){
 				return $file['name'];
 			}else{
 				return false;
