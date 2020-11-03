@@ -11,6 +11,10 @@
 			}
 		}
 
+		public static function userExists($user){
+
+		}
+
 	}
 
 ?>
