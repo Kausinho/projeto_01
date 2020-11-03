@@ -27,13 +27,33 @@
 	//Constantes para o painel de controle
 	define('NOME_EMPRESA','Danki Code');
 
-	//Funções
-	function pegaCargo($cargo){
-		$arr = [
-			'0' => 'Normal',
-			'1' => 'Sub Administrador',
-			'2' => 'Administrador'];
+	//Funções do painel
+	function pegaCargo($indice){
+		return Painel::$cargos[$indice];
+	}
 
-			return $arr[$cargo];
+	function selecionadoMenu($par){
+		/*<i class="fa fa-angle-double-rigth" aria-hidden="true"></i>*/
+		$url = explode('/',@$_GET['url'])[0];
+		if($url == $par){
+			echo 'class="menu-active"';
+		}
+	}
+
+	function verificaPermissaoMenu($permissao){
+		if($_SESSION['cargo'] >= $permissao){
+			return;
+		}else{
+			echo 'style="display:none;"';
+		}
+	}
+
+	function verificaPermissaoPagina($permissao){
+		if($_SESSION['cargo'] >= $permissao){
+			return;
+		}else{
+			include('painel/pages/permissao_negada.php');
+			die();
+		}
 	}
 ?>
