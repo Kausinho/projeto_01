@@ -30,11 +30,13 @@
 						Painel::alert('erro','Você precisa selecionar um cargo menor que o seu!');
 					}else if(Painel::imagemValida($imagem) == false){
 						Painel::alert('erro','O formato especificado não está correto!');
-					}else if(Painel::userExists($login)){
+					}else if(Usuario::userExists($login)){
 						Painel::alert('erro','O login já existe, selecione outro por favor!');
 					}else{
 						//Apenas cadastrar no banco de dados!
 						$usuario = new Usuario();
+						$imagem = Painel::uploadFile($imagem);
+						$usuario->cadastrarUsuario($login,$senha,$imagem,$nome,$cargo);
 						Painel::alert('sucesso','O cadastro do usuário '.$login.' foi feito com sucesso!');
 					}
 				}
