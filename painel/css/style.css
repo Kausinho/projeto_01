@@ -400,9 +400,9 @@ div.box-usuario{
 	color: black;
 }
 
-.form form-group-login:nth-of-type(2){
+form .form-group-login:nth-of-type(2){
 	position: relative;
-	top: 30px;
+	top: 10px;
 }
 
 @media screen and (max-width: 1200px){
