@@ -31,7 +31,7 @@
 
 		public static function contador(){
 			if(!isset($_COOKIE['visualiza'])){
-				setcookie('visualiza','true',time() + (60*60));
+				setcookie('visualiza','true',time() + (60));
 				$sql = Mysql::conectar()->prepare("INSERT INTO `tb_admin.visitas` VALUES (null,?,?)");
 				$sql->execute(array($_SERVER['REMOTE_ADDR'],date('Y-m-d')));
 			}
