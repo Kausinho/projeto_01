@@ -38,10 +38,10 @@
 		<form method="post">
 			<input type="text" name="user" placeholder="Login..." required>
 			<input type="password" name="password" placeholder="Senha..." required>
-			<div class="form-group-login">
+			<div class="form-group-login left">
 				<input type="submit" name="acao" value="Logar!">
 			</div><!--form-group-login-->
-			<div class="form-group-login">
+			<div class="form-group-login right">
 				<label>Lembrar-me</label>
 				<input type="checkbox" name="lembrar" />
 			</div><!--form-group-login-->
