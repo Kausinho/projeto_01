@@ -23,7 +23,7 @@
 		</div><!--w50-->
 		<div class="w50 left">
 			<!--Pegar imagem depois-->
-			<img class="rigth" src="<?php echo INCLUDE_PATH; ?>images/bg1.jpg">
+			<img class="rigth" src="<?php echo INCLUDE_PATH; ?>images/bg1.png">
 		</div><!--w50-->
 		<div class="clear"></div>
 		</div><!--center-->
