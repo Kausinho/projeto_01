@@ -109,6 +109,12 @@
 			return $certo;
 		}
 
+		public static function selectAll($tabela){
+			$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela`");
+			$sql->execute();
+			return $sql->fetchAll();
+		}
+
 	}
 
 ?>
