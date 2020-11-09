@@ -244,6 +244,43 @@ div.box-usuario{
 	font-size: 23px;
 }
 
+
+/*Tabelas*/
+
+table{
+	margin: 20px 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table tr:nth-of-type(1){
+	background: #0091ea;
+	color: white;
+}
+
+table tr{
+	border-bottom: 1px solid #ccc;
+}
+
+table tr{
+	color: #555;
+}
+
+table td{
+	padding: 8px;
+}
+
+table a.btn{
+	font-size: 13px;
+	color: white;
+	text-decoration: none;
+	padding: 4px 6px;
+	border-radius: 4px;
+}
+
+a.btn.edit{background: #F4B03E;}
+a.btn.delete{background: #E05C4E;}
+
 /*Box Metricas*/
 
 .box-metricas{
