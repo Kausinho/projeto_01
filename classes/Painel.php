@@ -109,9 +109,14 @@
 			return $certo;
 		}
 
-		public static function selectAll($tabela){
-			$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela`");
+		public static function selectAll($tabela,$start = null,$end = null){
+			if($start == null && $end == null){
+				$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela`");
+			}else{
+				$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela` LIMIT $start,$end");
+			}
 			$sql->execute();
+			
 			return $sql->fetchAll();
 		}
 
