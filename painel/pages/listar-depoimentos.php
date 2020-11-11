@@ -29,7 +29,7 @@
 		<tr>
 			<td><?php echo $value['nome']; ?></td>
 			<td><?php echo $value['data']; ?></td>
-			<td><a class="btn edit" href=""><i class="fa fa-pencil"></i> Editar</a></td>
+			<td><a class="btn edit" href="<?php echo INCLUDE_PATH_PAINEL ?>editar-depoimento?id=<?php echo $value['id']; ?>"><i class="fa fa-pencil"></i> Editar</a></td>
 			<td><a actionBtn="delete" class="btn delete" href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos?excluir=<?php echo $value['id']; ?>"><i class="fa fa-times"></i> Excluir</a></td>
 		</tr>
 		<?php } ?>
