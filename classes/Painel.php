@@ -137,9 +137,11 @@
 		/*
 			Método específico para selecionar apenas um registro.
 		*/
-		public static function select($table,$query,$arr){
-			$sql = Mysql::conectar()->prepare("DELETE FROM `$table` WHERE $query");
+		public static function select($table,$query = '',$arr = ''){
+			
+			$sql = MySql::conectar()->prepare("SELECT * FROM `$table` WHERE $query");
 			$sql->execute($arr);
+			
 			return $sql->fetch();
 		}
 
