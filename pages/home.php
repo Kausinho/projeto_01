@@ -56,26 +56,30 @@
 		<div class="center-extras">
 			<div id="depoimentos" class="w50 left depoimentos-container">
 				<h2 class="title">Depoimentos dos nossos clientes</h2>
+				<?php
+					$sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.depoimentos` ORDER BY order_id ASC LIMIT 3");
+					$sql->execute();
+					$depoimentos = $sql->fetchAll();
+					foreach ($depoimentos as $key => $value) {
+				?>
 				<div class="depoimento-single">
-					<p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet pellentesque nisl. Morbi odio diam, scelerisque eu finibus nec, tempor ac ipsum. Quisque auctor felis sit amet nibh feugiat dignissim. Praesent vel odio rhoncus, vulputate."</p>
-					<p class="nome-autor">Lorem Ipsum</p>
+					<p class="depoimento-descricao">"<?php echo $value['depoimento']; ?>"</p>
+					<p class="nome-autor"><?php echo $value['nome']; ?> - <?php echo $value['data']; ?></p>
 				</div><!--depoimento-single-->
-				<div class="depoimento-single">
-					<p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet pellentesque nisl. Morbi odio diam, scelerisque eu finibus nec, tempor ac ipsum. Quisque auctor felis sit amet nibh feugiat dignissim. Praesent vel odio rhoncus, vulputate."</p>
-					<p class="nome-autor">Lorem Ipsum</p>
-				</div><!--depoimento-single-->
-				<div class="depoimento-single">
-					<p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet pellentesque nisl. Morbi odio diam, scelerisque eu finibus nec, tempor ac ipsum. Quisque auctor felis sit amet nibh feugiat dignissim. Praesent vel odio rhoncus, vulputate."</p>
-					<p class="nome-autor">Lorem Ipsum</p>
-				</div><!--depoimento-single-->
+					<?php } ?>
 			</div><!--w50-->
 			<div id="servicos" class="w50 left servicos-container"></div>
 				<h2 class="title">Serviços</h2>
 				<div class="servicos">
 				<ul>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet pellentesque nisl. Morbi odio diam, scelerisque eu finibus nec, tempor ac ipsum. Quisque auctor felis sit amet nibh feugiat dignissim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere nulla vitae placerat ultricies. Proin turpis tortor, ultricies ac nisi id, porta finibus nunc. Nullam.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet pellentesque nisl. Morbi odio diam, scelerisque eu finibus nec, tempor ac ipsum. Quisque auctor felis sit amet nibh feugiat dignissim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere nulla vitae placerat ultricies. Proin turpis tortor, ultricies ac nisi id, porta finibus nunc. Nullam.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet pellentesque nisl. Morbi odio diam, scelerisque eu finibus nec, tempor ac ipsum. Quisque auctor felis sit amet nibh feugiat dignissim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere nulla vitae placerat ultricies. Proin turpis tortor, ultricies ac nisi id, porta finibus nunc. Nullam.</li>
+					<?php
+					$sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.servicos` ORDER BY order_id ASC LIMIT 3");
+					$sql->execute();
+					$servicos = $sql->fetchAll();
+					foreach ($servicos as $key => $value) {
+					?>
+					<li><?php echo $value['servico']; ?></li>
+					<?php } ?>
 				</ul>
 				</div><!--servicos-->	
 			</div><!--w50-->
