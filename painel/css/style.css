@@ -286,6 +286,7 @@ table a.btn{
 
 a.btn.edit{background: #F4B03E;}
 a.btn.delete{background: #E05C4E;}
+a.btn.order{background: #0091ea;}
 
 /*Paginacao*/
 
@@ -325,6 +326,7 @@ a.btn.delete{background: #E05C4E;}
 
 .box-metricas .box-metrica-single:nth-of-type(2){
 	background: #E05C4E;
+	border-radius: 4px;
 }
 
 .box-metricas .box-metrica-single:nth-of-type(3){
