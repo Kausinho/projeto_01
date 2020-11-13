@@ -262,7 +262,7 @@ section.extras .title{
 }
 
 .depoimento-single{
-	padding: 15px 0;
+	padding:15px 0;
 	border-bottom: 1px solid #5056A0;
 }
 
@@ -275,21 +275,17 @@ p.depoimento-descricao{
 p.nome-autor{
 	font-size: 15px;
 	color: white;
-	margin-top: 5px;
-	font-weight: bold;
-}
-
-.servicos {
-  	padding: 10px;
+	margin-top:5px;
+	font-weight:bold;
 }
 
 .servicos ul{
-	margin: 20px 0;
-	list-style-position: inside;
+	margin:20px 0;
+	
 }
 
 .servicos li{
-	padding: 15px;
+	margin-bottom: 15px;
 	font-size: 15px;
 	color: white;
 	font-weight: 300;
@@ -416,12 +412,11 @@ section.erro-404 a{
 	img{
 		float: none !important;
 		display: block;
-		margin:0 auto;	
+		margin:0 auto;
 	}
 
-
 	.w50{
-		padding: 20px;
+		padding:20px;
 		width: 100%;
 	}
 
@@ -429,9 +424,9 @@ section.erro-404 a{
 		width: 100%;
 		padding: 20px;
 	}
-
-	.box-especialidades{
-		padding: 40px 20px;
+	
+	.box-especialidade{
+		padding:40px 20px;
 		margin: 0;
 	}
 }
@@ -452,7 +447,7 @@ section.erro-404 a{
 	}
 
 	nav.mobile ul{
-		top: 55px;
+		top:55px;
 		z-index: 3;
 		position: absolute;
 		left: 0;
@@ -466,11 +461,10 @@ section.erro-404 a{
 		width: 100%;
 		display: block;
 		background: white;
-		border-bottom: 1px solid #ccc;
+		border-bottom:1px solid #ccc;
 		font-size: 17px;
 		padding:8px 0;
 	}
-
 	nav.mobile li a{
 		display: block;
 		color: #444;
