@@ -14,7 +14,12 @@
 
 		<?php
 			if(isset($_POST['acao'])){
-				Painel::alert('sucesso','O depoimento foi editado com sucesso!');		
+				if(Painel::update($_POST)){
+					Painel::alert('sucesso','O depoimento foi editado com sucesso!');
+					$depoimento = Painel::select('tb_site.depoimentos','id = ?',array($id));
+				}else{
+					Painel::alert('erro','Campos vázios não são permitidos.');
+				}
 			}	
 		?>
 
@@ -25,17 +30,18 @@
 		
 		<div class="form-group">
 			<label>Depoimento:</label>
-			<textarea name="depoimento"></textarea>
+			<textarea name="depoimento"><?php echo $depoimento['depoimento']; ?></textarea>
 		</div><!--form-group-->
 
 		<div class="form-group">
 			<label>Data:</label>
-			<input formato="data" type="text" name="data">
+			<input formato="data" type="text" name="data" value="<?php echo $depoimento['data']; ?>">
 		</div><!--form-group-->
 
 		<div class="form-group">
+			<input type="hidden" name="id" value="<?php echo $id; ?>">
 			<input type="hidden" name="nome_tabela" value="tb_site.depoimentos" />
-			<input type="submit" name="acao" value="Cadastrar!">
+			<input type="submit" name="acao" value="Atualizar!">
 		</div><!--form-group-->
 
 	</form>	
