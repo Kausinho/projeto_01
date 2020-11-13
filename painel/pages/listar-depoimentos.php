@@ -3,6 +3,8 @@
 		$idExcluir = intval($_GET['excluir']);
 		Painel::deletar('tb_site.depoimentos',$idExcluir);
 		Painel::redirect(INCLUDE_PATH_PAINEL.'listar-depoimentos');
+	}else if(isset($_GET['order']) && isset($_GET['id'])){
+		Painel::orderItem('tb_site.depoimentos',$_GET['order'],$_GET['id']);
 	}
 
 	$paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
@@ -20,6 +22,8 @@
 			<td><i class="fa fa-calendar" aria-hidden="true"></i> Data</td>
 			<td><i class="fa fa-edit" aria-hidden="true"></i> Editar</td>
 			<td><i class="fa fa-trash" aria-hidden="true"></i> Deletar</td>
+			<td>#</td>
+			<td>#</td>
 		</tr>
 
 		<?php
@@ -31,6 +35,8 @@
 			<td><?php echo $value['data']; ?></td>
 			<td><a class="btn edit" href="<?php echo INCLUDE_PATH_PAINEL ?>editar-depoimento?id=<?php echo $value['id']; ?>"><i class="fa fa-pencil"></i> Editar</a></td>
 			<td><a actionBtn="delete" class="btn delete" href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos?excluir=<?php echo $value['id']; ?>"><i class="fa fa-times"></i> Excluir</a></td>
+			<td><a class="btn order" href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos?order=up&id=<?php echo $value['id']; ?>"><i class="fa fa-angle-up" aria-hidden="true"></i></a></td>
+			<td><a class="btn order" href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos?order=down&id=<?php echo $value['id']; ?>"><i class="fa fa-angle-down" aria-hidden="true"></i></a></td>
 		</tr>
 		<?php } ?>
 
