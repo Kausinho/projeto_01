@@ -112,7 +112,7 @@
 			return $certo;
 		}
 
-		public static function update($arr){
+		public static function update($arr,$single = false){
 			$certo = true;
 			$first = false;
 			$nome_tabela = $arr['nome_tabela'];
@@ -138,10 +138,15 @@
 			}
 
 			if($certo == true){
-				$parametros[] = $arr['id'];
-				$sql = Mysql::conectar()->prepare($query.' WHERE id=?');
-				$sql->execute($parametros);
-			}
+				if($single == false){
+					$parametros[] = $arr['id'];
+					$sql = Mysql::conectar()->prepare($query.' WHERE id=?');
+					$sql->execute($parametros);
+				}else{
+					$sql = Mysql::conectar()->prepare($query);
+					$sql->execute($parametros);
+				}
+			}	
 			return $certo;
 		}
 
@@ -174,10 +179,13 @@
 			Método específico para selecionar apenas um registro.
 		*/
 		public static function select($table,$query = '',$arr = ''){
-			
-			$sql = MySql::conectar()->prepare("SELECT * FROM `$table` WHERE $query");
-			$sql->execute($arr);
-			
+			if($query != false){
+				$sql = MySql::conectar()->prepare("SELECT * FROM `$table` WHERE $query");
+				$sql->execute($arr);
+			}else{
+				$sql = MySql::conectar()->prepare("SELECT * FROM `$table`");
+				$sql->execute();
+			}
 			return $sql->fetch();
 		}
 
