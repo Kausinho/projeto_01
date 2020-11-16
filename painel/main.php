@@ -47,7 +47,7 @@
 			<a <?php selecionadoMenu('editar-usuario'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar Usuário</a>
 			<a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar Usuários</a>
 			<h2>Configuração Geral</h2>
-			<a <?php selecionadoMenu('editar-site'); ?> href="">Editar Site</a>
+			<a <?php selecionadoMenu('editar-site'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-site">Editar Site</a>
 		</div><!--items-menu-->
 	</div><!--menu-wraper-->
 </div><!--menu-->
