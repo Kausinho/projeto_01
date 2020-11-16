@@ -22,8 +22,8 @@
 			<td><i class="fa fa-calendar" aria-hidden="true"></i> Data</td>
 			<td><i class="fa fa-edit" aria-hidden="true"></i> Editar</td>
 			<td><i class="fa fa-trash" aria-hidden="true"></i> Deletar</td>
-			<td>#</td>
-			<td>#</td>
+			<td><i class="fa fa-arrow-up" aria-hidden="true"></i></td>
+			<td><i class="fa fa-arrow-down" aria-hidden="true"></i></td>
 		</tr>
 
 		<?php
