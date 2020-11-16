@@ -1,10 +1,15 @@
 <?php include('config.php'); ?>
 <?php Site::updateUsuarioOnline(); ?>
 <?php Site::contador(); ?>
+<?php
+	$infoSite = MySql::conectar()->prepare("SELECT * FROM `tb_site.config`");
+	$infoSite->execute();
+	$infoSite = $infoSite->fetch();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Projeto 01</title>
+	<title><?php echo $infoSite['titulo']; ?></title>
 	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="<?php echo INCLUDE_PATH; ?>estilo/style.css" rel="stylesheet" />
