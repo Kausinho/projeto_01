@@ -1,4 +1,4 @@
-<?php
+<?php 
 	$site = Painel::select('tb_site.config',false);
 ?>
 
@@ -15,7 +15,7 @@
 				}else{
 					Painel::alert('erro','Campos vázios não são permitidos.');
 				}
-			}	
+			}
 		?>
 
 		<div class="form-group">
@@ -44,19 +44,19 @@
 
 		<div class="form-group">
 			<label>Descrição do ícone <?php echo $i; ?>:</label>
-			<textarea name="descricao <?php echo $i; ?>"><?php echo $site['descricao'.$i]; ?></textarea>
+			<textarea name="descricao<?php echo $i; ?>"><?php echo $site['descricao'.$i]; ?></textarea>
 		</div><!--form-group-->
 
 		<?php } ?>
 
+		
 		<div class="form-group">
 			<input type="hidden" name="nome_tabela" value="tb_site.config" />
 			<input type="submit" name="acao" value="Atualizar!">
 		</div><!--form-group-->
 
-	</form>	
+	</form>
 
 
 
 </div><!--box-content-->
-
