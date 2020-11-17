@@ -1,0 +1,2 @@
+- Consertar animação do menu em JavaScript na página da home()
+- Arrumar a ordenação dos textos nos tópicos de serviços()
