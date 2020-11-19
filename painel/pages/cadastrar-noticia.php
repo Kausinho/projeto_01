@@ -53,7 +53,7 @@
 				$categorias = Painel::selectAll('tb_site.categorias');
 				foreach ($categorias as $key => $value) {
 			?>
-			<option <?php if($value['id'] == @$_POST['categoria_id']){echo 'selected';} ?> value="<?php echo $value['id'] ?>"><?php echo $value['nome']; ?></option>
+			<option <?php if($value['id'] == @$_POST['categoria_id']) echo 'selected'; ?> value="<?php echo $value['id'] ?>"><?php echo $value['nome']; ?></option>
 			<?php } ?>
 		</select>
 		</div><!--form-group-->
