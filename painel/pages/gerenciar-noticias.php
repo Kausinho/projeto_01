@@ -24,6 +24,7 @@
 	<table>
 		<tr>
 			<td><i class="fa fa-user" aria-hidden="true"></i> Título</td>
+			<td><i class="fa fa-list-alt" aria-hidden="true"></i> Categoria</td>
 			<td><i class="fa fa-picture-o" aria-hidden="true"></i> Imagem</td>
 			<td><i class="fa fa-edit" aria-hidden="true"></i> Editar</td>
 			<td><i class="fa fa-trash" aria-hidden="true"></i> Deletar</td>
@@ -33,10 +34,11 @@
 
 		<?php
 			foreach ($noticias as $key => $value) {
-
+			$nomeCategoria = Painel::select('tb_site.categorias','id=?',array($value['categoria_id']))['nome'];
 		?>
 		<tr>
 			<td><?php echo $value['titulo']; ?></td>
+			<td><?php echo $nomeCategoria; ?></td>
 			<td><img style="width: 50px;height: 50px;" src="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['capa']; ?>" /></td>
 			<td><a class="btn edit" href="<?php echo INCLUDE_PATH_PAINEL ?>editar-noticia?id=<?php echo $value['id']; ?>"><i class="fa fa-pencil"></i> Editar</a></td>
 			<td><a actionBtn="delete" class="btn delete" href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticias?excluir=<?php echo $value['id']; ?>"><i class="fa fa-times"></i> Excluir</a></td>
