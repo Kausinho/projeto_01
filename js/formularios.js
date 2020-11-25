@@ -15,7 +15,7 @@ $(function(){
 			if(data.sucesso){
 				//Tudo certo vamos melhorar a interface!
 				$('.overlay-loading').fadeOut();
-				$('.sucesso').fadeIn();
+				$('.sucesso').slideToggle();
 				setTimeout(function(){
 					$('.sucesso').fadeOut();
 				},3000)
