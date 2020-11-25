@@ -17,6 +17,10 @@ img{
 	max-width: 400px;
 }
 
+.text-center{
+	text-align: center;
+}
+
 .center{
 	max-width: 1280px;
 	padding:0 2%;
@@ -38,7 +42,7 @@ img{
 	float: left;
 }
 
-.rigth{
+.right{
 	float: right;
 }
 
@@ -51,15 +55,17 @@ img{
 .sucesso{
 	display: none;
 	position: fixed;
-	right: 20px;
-	top: 60px;
+	left: 0;
+	top: 0;
+	width: 100%;
 	padding: 15px 2%;
+	text-align: center;
+	color: white;
 	z-index: 999;
-	color: #008000;
-	background: #DFF2BF;
-	font-size: 14px;
+	color: #3c763d;
 	font-weight: bold;
-	border-radius: 8px;
+	font-size: 14px;
+	background: #DFF2BF;
 }
 
 .overlay-loading{
@@ -201,6 +207,14 @@ section.descricao-autor h2{
 	font-size: 28px;
 	font-weight: 300;
 	color: #444;
+}
+
+section.descricao-autor img{
+	width: 60px;
+	height: 60px;
+	display:inline-block;
+	vertical-align: middle;
+	border-radius: 50%;
 }
 
 section.descricao-autor p{
@@ -408,6 +422,105 @@ section.erro-404 a{
 	background: white;
 }
 
+/*Portal de Notícias*/
+.header-noticias{
+	width: 100%;
+	background: #333864;
+	padding: 40px 0;
+}
+
+.header-noticias h2:nth-of-type(1){
+	font-size: 41px;
+}
+
+.header-noticias h2{
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+.header-noticias h2 > b{
+	color: #F40B5C;
+}
+
+section.container-portal{
+	padding: 50px 0;
+}
+
+.sidebar{
+	float: left;
+	width: 30%;
+}
+
+.box-content-sidebar{
+	width: 100%;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	margin-bottom: 50px;
+	background: #DDDDDD;
+	padding: 15px;
+	color: #333864;
+}
+
+.box-content-sidebar h3{
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.box-content-sidebar input[type=text]{
+	width: 100%;
+	height: 40px;
+	border: 1px solid rgb(220,220,220);
+	padding-left: 8px;
+	margin: 10px 0;
+}
+
+.box-content-sidebar select{
+	width: 100%;
+	height: 40px;
+	border: 1px solid rgb(220,220,220);
+	padding-left: 8px;
+	margin: 10px 0;
+}
+
+.box-content-sidebar input[type=submit]{
+	cursor: pointer;
+	background: #F40B5C;
+	color: white;
+	width: 115px;
+	height: 35px;
+	font-weight: bold;
+	margin: 10px 0;
+	border: 0;
+}
+
+.autor-box-portal{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.box-img-autor{
+	width: 160px;
+	height: 160px;
+	display: inline-block;
+	border-radius: 50%;
+	margin: 20px 0;
+	background-image: url('../images/Kausinho.jpg');
+	background-size: 100% 100%;
+}
+
+.autor-box-portal h3,
+.autor-box-portal p{
+	color: #646464;
+}
+
+.autor-box-portal p{
+	font-size: 14px;
+	margin-top: 8px;
+	font-weight: lighter;
+}
+
 @media screen and (max-width: 768px){
 	img{
 		float: none !important;
@@ -429,9 +542,7 @@ section.erro-404 a{
 		padding:40px 20px;
 		margin: 0;
 	}
-}
 
-@media screen and (max-width: 700px){
 	nav.desktop{
 		display: none;
 	}
