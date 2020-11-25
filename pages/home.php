@@ -16,14 +16,10 @@
 
 	<section class="descricao-autor">
 		<div class="center">
-		<div class="w50 left">
-		<h2><?php echo $infoSite['nome_autor']; ?></h2>
+		<div class="w100 left">
+		<h2 class="text-center"><img src="<?php echo INCLUDE_PATH ?>images/Kausinho.jpg" /> <?php echo $infoSite['nome_autor']; ?></h2>
 			<p><?php echo $infoSite['descricao']; ?></p>
-		</div><!--w50-->
-		<div class="w50 left">
-			<!--Pegar imagem depois-->
-			<img class="rigth" src="<?php echo INCLUDE_PATH; ?>images/bg1.jpg">
-		</div><!--w50-->
+		</div><!--w100-->
 		<div class="clear"></div>
 		</div><!--center-->
 	</section><!--descricao-autor-->
