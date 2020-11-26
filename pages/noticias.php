@@ -36,6 +36,21 @@
 			</div><!--box-content-sidebar-->	
 		</div><!--sidebar-->
 
+		<div class="conteudo-portal">
+			<div class="header-conteudo-portal">
+				<!--<h2>Visualizando todos os Posts</h2>-->
+				<h2>Visualizando posts em <span>Esportes</span></h2>
+			</div><!--header-conteudo-portal-->
+			<?php
+				for($i = 0; $i < 5; $i++){
+			?>
+			<div class="box-single-conteudo">
+				<h2>19/09/2008 - Conheça os eleitos para ga...</h2>
+				<p>Praesent vel ante in enim maximus convallis eu non ante. Pellentesque faucibus nisl placerat, malesuada metus et, porttitor lorem. Sed dui dolor, maximus vitae viverra non, facilisis a dolor. Maecenas quis tempus neque, nec volutpat urna. In sed tellus urna. Etiam malesuada pellentesque urna vitae maximus. Vestibulum rutrum porta magna, ac tempus dolor maximus eu. Ut dictum leo a nisi efficitur mattis. Quisque mollis felis enim, id aliquet odio dapibus vitae.</p>
+			</div><!--box-single-conteudo-->
+			<?php } ?>	
+		</div><!--conteudo-portal-->	
+
 
 		<div class="clear"></div>
 	</div><!--center-->	
