@@ -559,7 +559,48 @@ section.container-portal{
 	margin-top: 8px;
 }
 
+.box-single-conteudo a{
+	background: #00B95C;
+	display: block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	padding: 0 3px;
+	font-size: 15px;
+	margin-top: 8px;
+	text-decoration: none;
+	color: white;
+}
+
+.paginator{
+	text-align: center;
+}
+
+.paginator a{
+	margin: 0 10px;
+	display: inline-block;
+	text-decoration: none;
+	padding: 6px 4px;
+	border: 1px solid rgb(220,220,220);
+	color: rgb(100,100,100);
+}
+
+.paginator a.active-page{
+	background: rgb(220,220,220);
+}
+
 @media screen and (max-width: 768px){
+	.conteudo-portal{
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.sidebar{
+		width: 100%;
+		text-align: center;
+	}
+
 	img{
 		float: none !important;
 		display: block;
