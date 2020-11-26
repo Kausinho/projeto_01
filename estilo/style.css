@@ -493,6 +493,7 @@ section.container-portal{
 	font-weight: bold;
 	margin: 10px 0;
 	border: 0;
+	border-radius: 4px;
 }
 
 .autor-box-portal{
@@ -519,6 +520,43 @@ section.container-portal{
 	font-size: 14px;
 	margin-top: 8px;
 	font-weight: lighter;
+}
+
+.conteudo-portal{
+	float: left;
+	width: 70%;
+	padding-left: 50px;
+}
+
+.header-conteudo-portal{
+	color: #333864;
+}
+
+.header-conteudo-portal h2{
+	font-size: 23px;
+}
+
+.header-conteudo-portal h2 > span{
+	border-top: 3px solid #333864;
+}
+
+.box-single-conteudo{
+	margin:15px 0;
+	padding: 15px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.box-single-conteudo h2{
+	color: #646464;
+	font-weight: normal;
+	font-size: 22px;
+}
+
+.box-single-conteudo p{
+	color: #646464;
+	font-weight: normal;
+	font-size: 15px;
+	margin-top: 8px;
 }
 
 @media screen and (max-width: 768px){
