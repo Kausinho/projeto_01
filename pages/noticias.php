@@ -1,3 +1,9 @@
+<?php
+	$url = explode('/',$_GET['url']);
+	if(!isset($url[2])){
+
+?>
+
 <section class="header-noticias">
 	<div class="center">
 		<h2><i class="fa fa-bullhorn" aria-hidden="true"></i></h2>
@@ -47,8 +53,16 @@
 			<div class="box-single-conteudo">
 				<h2>19/09/2008 - Conheça os eleitos para ga...</h2>
 				<p>Praesent vel ante in enim maximus convallis eu non ante. Pellentesque faucibus nisl placerat, malesuada metus et, porttitor lorem. Sed dui dolor, maximus vitae viverra non, facilisis a dolor. Maecenas quis tempus neque, nec volutpat urna. In sed tellus urna. Etiam malesuada pellentesque urna vitae maximus. Vestibulum rutrum porta magna, ac tempus dolor maximus eu. Ut dictum leo a nisi efficitur mattis. Quisque mollis felis enim, id aliquet odio dapibus vitae.</p>
+				<a href="<?php echo INCLUDE_PATH; ?>noticias/esportes/nome-do-post">Leia mais</a>
 			</div><!--box-single-conteudo-->
-			<?php } ?>	
+			<?php } ?>
+
+			<div class="paginator">
+				<a class="active-page" href="">1</a>
+				<a href="">2</a>
+				<a href="">3</a>
+				<a href="">4</a>
+			</div><!--paginator-->	
 		</div><!--conteudo-portal-->	
 
 
@@ -56,3 +70,9 @@
 	</div><!--center-->	
 
 </section><!--container--portal-->
+
+<?php }else{
+	include('noticia_single.php');
+} 
+?>
+
