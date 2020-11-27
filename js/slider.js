@@ -2,7 +2,7 @@ $(function(){
 
 	var curSlide = 0;
 	var maxSlide = $('.banner-single').length - 1;
-	var delay = 3;
+	var delay = 4;
 
 
 	initSlider();
