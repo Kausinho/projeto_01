@@ -1,7 +1,7 @@
 	<section class="banner-container">
-		<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/img1.jpg');" class="banner-single"></div><!--banner-single-->
-		<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/img2.jpg');" class="banner-single"></div><!--banner-single-->
-		<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/img3.jpg');" class="banner-single"></div><!--banner-single-->
+		<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/javascript.jpg');" class="banner-single"></div><!--banner-single-->
+		<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/php.jpg');" class="banner-single"></div><!--banner-single-->
+		<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/html-css.jpg');" class="banner-single"></div><!--banner-single-->
 			<div class="overlay"></div><!--overlay-->
 			<div class="center">
 			<form method="post">
