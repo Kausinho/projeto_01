@@ -141,11 +141,11 @@ section.banner-container{
 	top: 0;
 	z-index: 1;
 	width: 100%;
-	filter: opacity(65%);
+	opacity: 0;
 	height: 100%;
 	background-size: cover;
 	background-position: center;
-
+	filter: blur(4px);
 }
 
 .overlay{
