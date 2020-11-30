@@ -64,6 +64,8 @@
 					}else{
 						echo '<h2>Visualizando posts em <span>'.$categoria['nome'].'</span></h2>';
 					}
+
+					
 				?>
 				
 				
