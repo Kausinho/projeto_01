@@ -1,7 +1,10 @@
 <?php
 	$url = explode('/',$_GET['url']);
-	if(!isset($url[2])){
-
+	if(!isset($url[2]))
+	{
+	$categoria = MySql::conectar()->prepare("SELECT * FROM `tb_site.categorias` WHERE slug = ?");	
+	$categoria->execute(array(@$url[1]));
+	$categoria = $categoria->fetch();
 ?>
 
 <section class="header-noticias">
@@ -17,16 +20,22 @@
 			<div class="box-content-sidebar">
 				<h3><i class="fa fa-search" aria-hidden="true"></i> Realizar uma busca:</h3>
 				<form>
-					<input type="text" name="busca" placeholder="O que deseja procurar?" required>
-					<input type="submit" name="acao" value="Pesquisar!">
+					<input type="text" name="parametro" placeholder="O que deseja procurar?" required>
+					<input type="submit" name="buscar" value="Pesquisar!">
 				</form>
 			</div><!--box-content-sidebar-->
 			<div class="box-content-sidebar">
 				<h3><i class="fa fa-list-alt" aria-hidden="true"></i> Selecione a categoria:</h3>
 				<form>
 					<select name="categoria">
-						<option value="esportes">Esportes</option>
-						<option value="esportes">Geral</option>
+						<?php
+							$categorias = MySql::conectar()->prepare("SELECT * FROM `tb_site.categorias` ORDER BY order_id ASC");
+							$categorias->execute();
+							$categorias = $categorias->fetchAll();
+							foreach ($categorias as $key => $value) {
+						?>
+							<option value="<?php echo $value['slug'] ?>"><?php echo $value['nome']; ?></option>
+						<?php } ?>
 					</select>
 				</form>
 			</div><!--box-content-sidebar-->
@@ -35,8 +44,13 @@
 					<div class="autor-box-portal">
 						<div class="box-img-autor"></div>
 						<div class="texto-autor-portal text-center">
-							<h3>Klaussio Brunow Carvalho</h3>
-							<p>Proin sed purus sed nibh bibendum sollicitudin eget in ipsum. Quisque ex purus, sollicitudin vitae imperdiet sed, luctus facilisis ligula. Quisque leo nunc, vulputate non metus eget, tristique porta odio. Quisque nec vehicula justo. Donec dignissim mauris vitae hendrerit cursus. Ut gravida iaculis erat at auctor. Aenean at erat consectetur dui elementum luctus.</p>
+							<?php
+								$infoSite = MySql::conectar()->prepare("SELECT * FROM `tb_site.config`");
+								$infoSite->execute();
+								$infoSite = $infoSite->fetch();
+							?>
+							<h3><?php echo $infoSite['nome_autor'] ?></h3>
+							<p><?php echo substr($infoSite['descricao'],0,300).'...' ?> <a href="<?php echo INCLUDE_PATH ?>">Ler mais</a></p>
 						</div><!--texto--autor-portal-->
 					</div><!--autor-box-portal-->	
 			</div><!--box-content-sidebar-->	
@@ -44,8 +58,15 @@
 
 		<div class="conteudo-portal">
 			<div class="header-conteudo-portal">
-				<!--<h2>Visualizando todos os Posts</h2>-->
-				<h2>Visualizando posts em <span>Esportes</span></h2>
+				<?php
+					if($categoria['nome'] == ''){
+						echo '<h2>Visualizando todos os Posts</h2>';
+					}else{
+						echo '<h2>Visualizando posts em <span>'.$categoria['nome'].'</span></h2>';
+					}
+				?>
+				
+				
 			</div><!--header-conteudo-portal-->
 			<?php
 				for($i = 0; $i < 5; $i++){
