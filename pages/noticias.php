@@ -65,18 +65,28 @@
 						echo '<h2>Visualizando posts em <span>'.$categoria['nome'].'</span></h2>';
 					}
 
-					
+					$query = "SELECT * FROM `tb_site.noticias` ";
+					if($categoria['nome'] != ''){
+						$categoria_id = (int)$categoria['id'];
+						$query.="WHERE categoria_id = $categoria[id]";
+					}
+					$sql = MySql::conectar()->prepare($query);
+					$sql->execute();
+					$noticias = $sql->fetchAll();
 				?>
 				
 				
 			</div><!--header-conteudo-portal-->
 			<?php
-				for($i = 0; $i < 5; $i++){
+				foreach($noticias as $key=>$value){
+					$sql = MySql::conectar()->prepare("SELECT `slug` FROM `tb_site.categorias` WHERE id = ?");
+					$sql->execute(array($value['categoria_id']));
+					$categoriaNome = $sql->fetch()['slug'];
 			?>
 			<div class="box-single-conteudo">
-				<h2>19/09/2008 - Conheça os eleitos para ga...</h2>
-				<p>Praesent vel ante in enim maximus convallis eu non ante. Pellentesque faucibus nisl placerat, malesuada metus et, porttitor lorem. Sed dui dolor, maximus vitae viverra non, facilisis a dolor. Maecenas quis tempus neque, nec volutpat urna. In sed tellus urna. Etiam malesuada pellentesque urna vitae maximus. Vestibulum rutrum porta magna, ac tempus dolor maximus eu. Ut dictum leo a nisi efficitur mattis. Quisque mollis felis enim, id aliquet odio dapibus vitae.</p>
-				<a href="<?php echo INCLUDE_PATH; ?>noticias/esportes/nome-do-post">Leia mais</a>
+				<h2><?php echo $value['data'] ?> - <?php echo $value['titulo']; ?></h2>
+				<p><?php echo $value['conteudo']; ?></p>
+				<a href="<?php echo INCLUDE_PATH; ?>noticias/<?php echo $categoriaNome; ?>/<?php echo $value['slug']; ?>">Leia mais</a>
 			</div><!--box-single-conteudo-->
 			<?php } ?>
 
