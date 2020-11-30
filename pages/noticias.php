@@ -59,14 +59,14 @@
 		<div class="conteudo-portal">
 			<div class="header-conteudo-portal">
 				<?php
-					if($categoria['nome'] == ''){
+					if(isset($categoria['nome']) == ''){
 						echo '<h2>Visualizando todos os Posts</h2>';
 					}else{
 						echo '<h2>Visualizando posts em <span>'.$categoria['nome'].'</span></h2>';
 					}
 
 					$query = "SELECT * FROM `tb_site.noticias` ";
-					if($categoria['nome'] != ''){
+					if(isset($categoria['nome']) != ''){
 						$categoria_id = (int)$categoria['id'];
 						$query.="WHERE categoria_id = $categoria[id]";
 					}
