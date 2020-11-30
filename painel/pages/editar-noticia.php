@@ -19,7 +19,7 @@
 				$conteudo = $_POST['conteudo'];
 				$imagem = $_FILES['capa'];
 				$imagem_atual = $_POST['imagem_atual'];
-				$verifica = MySql::conectar()->prepare("SELECT `id` FROM `tb_site.noticias` WHERE titulo = ? AND categoria = ? AND id != ?");
+				$verifica = MySql::conectar()->prepare("SELECT `id` FROM `tb_site.noticias` WHERE titulo = ? AND categoria_id = ? AND id != ?");
 				$verifica->execute(array($nome,$_POST['categoria_id'],$id));
 				if($verifica->rowCount() == 0){
 				if($imagem['name'] != ''){
@@ -28,7 +28,7 @@
 						Painel::deleteFile($imagem_atual);
 						$imagem = Painel::uploadFile($imagem);
 						$slug = Painel::generateSlug($nome);
-						$arr = ['titulo'=>$nome,'categoria_id'=>$_POST['categoria_id'],'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'id'=>$id,'nome_tabela'=>'tb_site.noticias'];
+						$arr = ['titulo'=>$nome,'data'=>date('Y-m-d'),'categoria_id'=>$_POST['categoria_id'],'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'id'=>$id,'nome_tabela'=>'tb_site.noticias'];
 						Painel::update($arr);
 						$slide = Painel::select('tb_site.noticias','id = ?',array($id));
 						Painel::alert('sucesso','A notícia foi editada junto com a imagem!');	
