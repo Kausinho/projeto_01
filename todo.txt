@@ -1,4 +1,0 @@
-- Consertar animação do menu em JavaScript na página home()
-- Arrumar a estrutura dos textos nos tópicos de serviços na página home()
-- Arrumar sistema para identificar formatos de imagem PNG()
-- Consertar sistema na página cadastrar notícias()
