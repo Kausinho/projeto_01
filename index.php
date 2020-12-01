@@ -103,7 +103,7 @@
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
 
 	<?php
-		if(strstr($url,'noticias') !== false){
+		if(is_array($url) && strstr($url[0],'noticias') !== false){
 	?>
 		<script>
 			$(function(){
