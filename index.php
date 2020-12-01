@@ -107,7 +107,9 @@
 	?>
 		<script>
 			$(function(){
-				alert('Carregado com sucesso');
+				$('select').change(function(){
+					location.href=include_path+"noticias/"+$(this).val();
+				})
 			})
 		</script>
 	<?php
