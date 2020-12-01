@@ -19,7 +19,7 @@
 		<div class="sidebar">
 			<div class="box-content-sidebar">
 				<h3><i class="fa fa-search" aria-hidden="true"></i> Realizar uma busca:</h3>
-				<form>
+				<form method="post">
 					<input type="text" name="parametro" placeholder="O que deseja procurar?" required>
 					<input type="submit" name="buscar" value="Pesquisar!">
 				</form>
@@ -28,7 +28,7 @@
 				<h3><i class="fa fa-list-alt" aria-hidden="true"></i> Selecione a categoria:</h3>
 				<form>
 					<select name="categoria">
-					<option value="" disabled selected="">Todas as categorias</option>
+					<option value="" selected="">Todas as categorias</option>
 						<?php
 							$categorias = MySql::conectar()->prepare("SELECT * FROM `tb_site.categorias` ORDER BY order_id ASC");
 							$categorias->execute();
@@ -59,22 +59,70 @@
 
 		<div class="conteudo-portal">
 			<div class="header-conteudo-portal">
-				<?php
-					if(isset($categoria['nome']) == ''){
-						echo '<h2>Visualizando todos os Posts</h2>';
-					}else{
-						echo '<h2>Visualizando posts em <span>'.$categoria['nome'].'</span></h2>';
-					}
+						<?php
+							$porPagina = 10;
+							if(!isset($_POST['parametro'])){
+								if(isset($categoria['nome']) == ''){
+									echo '<h2>Visualizando todos os Posts</h2>';
+								}else{
+									echo '<h2>Visualizando posts em <span>'.$categoria['nome'].'</span></h2>';
+								}
+							}else{
+								echo '<h2><i class="fa fa-check"></i> Busca realizada com sucesso!</h2>';
+							}
 
-					$query = "SELECT * FROM `tb_site.noticias` ";
-					if(isset($categoria['nome']) != ''){
-						$categoria_id = (int)$categoria['id'];
-						$query.="WHERE categoria_id = $categoria[id]";
-					}
-					$sql = MySql::conectar()->prepare($query);
-					$sql->execute();
-					$noticias = $sql->fetchAll();
-				?>
+							$query = "SELECT * FROM `tb_site.noticias` ";
+							if(isset($categoria['nome']) != ''){
+								$categoria_id = (int)$categoria['id'];
+								$query.="WHERE categoria_id = $categoria[id]";
+							}
+							if(isset($_POST['parametro'])){
+								if(strstr($query,'WHERE') !== false){
+									$busca = $_POST['parametro'];
+									$query.=" AND titulo LIKE '%$busca%'";
+								}else{
+									$busca = $_POST['parametro'];
+									$query.=" WHERE titulo LIKE '%$busca%'";
+								}
+							}
+							$query2 = "SELECT * FROM `tb_site.noticias`";
+							if(isset($categoria['nome']) != ''){
+								$categoria_id = (int)$categoria['id'];
+								$query2.="WHERE categoria_id = $categoria[id]";
+							}
+							if(isset($_GET['parametro'])){
+								if(strstr($query2,'WHERE') !== false){
+									$busca = $_POST['parametro'];
+									$query2.=" AND titulo LIKE '%$busca%'";
+								}else{
+									$busca = $_POST['parametro'];
+									$query2.=" WHERE titulo LIKE '%$busca%'";
+								}
+							}
+							$totalPaginas = MySql::conectar()->prepare($query2);
+							$totalPaginas->execute();
+							$totalPaginas = ceil($totalPaginas->rowCount() / $porPagina);
+							if(!isset($_POST['parametro'])){
+								if(isset($_GET['pagina'])){
+									$pagina = (int)$_GET['pagina'];
+									if($pagina > $totalPaginas){
+										$pagina = 1;
+								}
+
+									$pagina = (int)$_GET['pagina'];
+									$queryPg =($pagina - 1) * $porPagina;
+									$query.=" ORDER BY order_id ASC LIMIT $queryPg,$porPagina";
+								}else{
+									$pagina = 1;
+									$query.=" ORDER BY order_id ASC LIMIT 0,$porPagina";
+								}
+							}else{
+								$query.=" ORDER BY order_id ASC";
+							}
+							$sql = MySql::conectar()->prepare($query);
+							$sql->execute();
+							$noticias = $sql->fetchAll();
+							?>
 				
 				
 			</div><!--header-conteudo-portal-->
@@ -90,12 +138,19 @@
 				<a href="<?php echo INCLUDE_PATH; ?>noticias/<?php echo $categoriaNome; ?>/<?php echo $value['slug']; ?>">Leia mais</a>
 			</div><!--box-single-conteudo-->
 			<?php } ?>
-
 			<div class="paginator">
-				<a class="active-page" href="">1</a>
-				<a href="">2</a>
-				<a href="">3</a>
-				<a href="">4</a>
+				<?php
+				if(!isset($_POST['parametro'])){
+					for($i = 1; $i <= $totalPaginas; $i++){
+						$catStr = (isset($categoria['nome']) != '') ? '/'.$categoria['slug'] : '';
+						if($pagina == $i){
+							echo '<a class="active-page" href="'.INCLUDE_PATH.'noticias'.$catStr.'?pagina='.$i.'">'.$i.'</a>';
+						}else{
+							echo '<a href="'.INCLUDE_PATH.'noticias'.$catStr.'?pagina='.$i.'">'.$i.'</a>';
+						}
+					}
+				}
+				?>
 			</div><!--paginator-->	
 		</div><!--conteudo-portal-->	
 
