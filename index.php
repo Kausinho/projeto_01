@@ -101,6 +101,18 @@
 	<script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
 	
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
+
+	<?php
+		if(strstr($url,'noticias') !== false){
+	?>
+		<script>
+			$(function(){
+				alert('Carregado com sucesso');
+			})
+		</script>
+	<?php
+		}
+	?>
 	
 	<?php
 		if($url == 'contato'){
