@@ -28,13 +28,14 @@
 				<h3><i class="fa fa-list-alt" aria-hidden="true"></i> Selecione a categoria:</h3>
 				<form>
 					<select name="categoria">
+					<option value="" disabled selected="">Todas as categorias</option>
 						<?php
 							$categorias = MySql::conectar()->prepare("SELECT * FROM `tb_site.categorias` ORDER BY order_id ASC");
 							$categorias->execute();
 							$categorias = $categorias->fetchAll();
 							foreach ($categorias as $key => $value) {
 						?>
-							<option value="<?php echo $value['slug'] ?>"><?php echo $value['nome']; ?></option>
+							<option <?php if($value['slug'] == @$url[1]) echo 'selected'; ?> value="<?php echo $value['slug'] ?>"><?php echo $value['nome']; ?></option>
 						<?php } ?>
 					</select>
 				</form>
@@ -84,8 +85,8 @@
 					$categoriaNome = $sql->fetch()['slug'];
 			?>
 			<div class="box-single-conteudo">
-				<h2><?php echo $value['data'] ?> - <?php echo $value['titulo']; ?></h2>
-				<p><?php echo $value['conteudo']; ?></p>
+				<h2><?php echo date('d-m-Y',strtotime($value['data'])) ?> - <?php echo $value['titulo']; ?></h2>
+				<p><?php echo substr(strip_tags($value['conteudo']),0,400).'...'; ?></p>
 				<a href="<?php echo INCLUDE_PATH; ?>noticias/<?php echo $categoriaNome; ?>/<?php echo $value['slug']; ?>">Leia mais</a>
 			</div><!--box-single-conteudo-->
 			<?php } ?>
