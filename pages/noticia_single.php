@@ -1,19 +1,27 @@
+<?php
+	$url = explode('/',$_GET['url']);
+	$verifica_categoria = MySql::conectar()->prepare("SELECT * FROM `tb_site.categorias` WHERE slug = ?");
+	$verifica_categoria->execute(array($url[1]));
+	if($verifica_categoria->rowCount() == 0){
+		Painel::redirect(INCLUDE_PATH.'noticias');
+	}
+	$categoria_info = $verifica_categoria->fetch();
+
+	$post = MySql::conectar()->prepare("SELECT * FROM `tb_site.noticias` WHERE slug = ? AND categoria_id = ?");
+	$post->execute(array($url[2],$categoria_info['id']));
+	if($post->rowCount() == 0){
+		Painel::redirect(INCLUDE_PATH.'noticias');
+	}
+
+	$post = $post->fetch();
+?>
 <section class="noticia-single">
 	<div class="center">
 		<header>
-			<h1><i class="fa fa-calendar" aria-hidden="true"></i> 27/11/2020 - Título da minha notícia</h1>
+			<h1><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo $post['data'] ?> - <?php echo $post['titulo'] ?></h1>
 		</header>
 			<article>	
-				<h3>Título em h3</h3>
-				<h2>Título em h2</h2>
-				<p>Quisque a nunc metus. Integer ullamcorper malesuada eros, vitae euismod nisl lacinia et. Morbi consequat tristique risus in hendrerit. Sed ultrices est vitae elementum suscipit. Donec lacinia enim enim, in tristique dolor auctor vel. Etiam egestas vel urna et laoreet. Nullam quis tincidunt nisl. Integer posuere justo fermentum dui aliquam iaculis</p>
-				<p>Quisque a nunc metus. Integer ullamcorper malesuada eros, vitae euismod nisl lacinia et. Morbi consequat tristique risus in hendrerit. Sed ultrices est vitae elementum suscipit. Donec lacinia enim enim, in tristique dolor auctor vel. Etiam egestas vel urna et laoreet. Nullam quis tincidunt nisl. Integer posuere justo fermentum dui aliquam iaculis</p>
-				<ul>
-					<li>Item 1</li>
-					<li>Item 2</li>
-					<li>Item 3</li>
-				</ul>
-				<img src="<?php echo INCLUDE_PATH ?>images/landscape.jpg" />
+				<?php echo $post['conteudo']; ?>
 			</article>
 	</div><!--center-->
 </section>
