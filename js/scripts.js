@@ -119,7 +119,7 @@ $(function(){
 
 	});
 
-	if($('target').length > 0){
+	if($('target','').length > 0){
 		//O elemento existe, portanto precisamos dar o scroll em algum elemento.
 		var elemento = '#'+$('target').attr('target');
 
@@ -128,6 +128,16 @@ $(function(){
 		$('html,body').animate({scrollTop:divScroll},2000);
 	}
 
+
+	$('section portal-container a').click(function(){
+		var href = $(this).attr('section descricao-autor');
+
+		var offSetTop = $(href).offset().top;
+
+		$('html,body').animate({'scrollTop':offSetTop},2000);
+
+		return false;
+	});
 
 
 	carregarDinamico();
