@@ -14,7 +14,7 @@
 	</div><!--center-->	
 </section>
 
-<section class="container-portal">
+<section class="container-portal" id="noticias">
 	<div class="center">
 		<div class="sidebar">
 			<div class="box-content-sidebar">
@@ -40,7 +40,7 @@
 					</select>
 				</form>
 			</div><!--box-content-sidebar-->
-			<div class="box-content-sidebar">
+			<div class="box-content-sidebar" >
 				<h3><i class="fa fa-user" aria-hidden="true"></i> Sobre o autor:</h3>
 					<div class="autor-box-portal">
 						<div class="box-img-autor"></div>
