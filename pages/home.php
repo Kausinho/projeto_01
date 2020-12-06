@@ -14,7 +14,7 @@
 		<div class="bullets"></div><!--bullets-->
 	</section><!--banner-container-->
 
-	<section class="descricao-autor">
+	<section class="descricao-autor" id="noticias">
 		<div class="center">
 		<div class="w100 left">
 		<h2 class="text-center"><img src="<?php echo INCLUDE_PATH ?>images/Kausinho.jpg" /> <?php echo $infoSite['nome_autor']; ?></h2>
