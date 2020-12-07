@@ -134,7 +134,7 @@ $(function(){
 
 		var offSetTop = $(href).offset().top;
 
-		$('html,body').animate({'scrollTop':offSetTop},2000);
+		$('html,body').animate({scrollTop:offSetTop},2000);
 
 		return false;
 	});
