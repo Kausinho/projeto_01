@@ -128,9 +128,10 @@ $(function(){
 		$('html,body').animate({scrollTop:divScroll},2000);
 	}
 
-
-	$('section portal-container a').click(function(){
-		var href = $(this).attr('section descricao-autor');
+		/*Efeito scrool para a página de notícias*/
+	/*
+	$('nav a').click(function(){
+		var href = $(this).attr('href');
 
 		var offSetTop = $(href).offset().top;
 
@@ -138,6 +139,7 @@ $(function(){
 
 		return false;
 	});
+	*/
 
 
 	carregarDinamico();
