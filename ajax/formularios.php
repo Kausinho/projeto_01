@@ -10,7 +10,7 @@
 	}
 	$info = array('assunto'=>$assunto,'corpo'=>$corpo);
 	$mail = new Email('smtp.gmail.com','kausinhobrunow@gmail.com','kalzinho2005','Kausinho');
-	$mail->addAdress('gandalfcurso@gmail.com','Klaussio');
+	$mail->addAdress('testekausinho@gmail.com','Klaussio');
 	$mail->formatarEmail($info);
 	if($mail->enviarEmail()){
 		$data['sucesso'] = true;
