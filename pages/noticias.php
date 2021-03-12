@@ -51,7 +51,7 @@
 								$infoSite = $infoSite->fetch();
 							?>
 							<h3><?php echo $infoSite['nome_autor'] ?></h3>
-							<p><?php echo substr($infoSite['descricao'],0,300).'...' ?> <a href="<?php echo INCLUDE_PATH ?>">Ler mais</a></p>
+							<p><?php echo substr($infoSite['descricao'],0,300).'...' ?> <a id="btnScroll" href="<?php echo INCLUDE_PATH ?>">Ler mais</a></p>
 						</div><!--texto--autor-portal-->
 					</div><!--autor-box-portal-->	
 			</div><!--box-content-sidebar-->	
