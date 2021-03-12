@@ -129,17 +129,16 @@ $(function(){
 	}
 
 		/*Efeito scrool para a página de notícias*/
-	/*
-	$('nav a').click(function(){
-		var href = $(this).attr('href');
+	
+		
+	
+		$('#btnScroll').click(function(){
+			var el = $(this).attr('#btnScroll');
+			var scrollNot = $(el).offset().top;
 
-		var offSetTop = $(href).offset().top;
+			$('html,body').animate({'scrollTop':scrollNot},2000);
+		});
 
-		$('html,body').animate({scrollTop:offSetTop},2000);
-
-		return false;
-	});
-	*/
 	
 
 
